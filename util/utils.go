@@ -3,6 +3,7 @@ package util
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -21,4 +22,12 @@ func Check(e error) {
 	if e != nil {
 		panic(e)
 	}
+}
+
+
+func ConvertStrToInt(in string) (out int) {
+	out, e := strconv.Atoi(in)
+	Check(e)
+
+	return
 }
