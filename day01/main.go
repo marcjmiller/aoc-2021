@@ -1,14 +1,14 @@
 package day01
 
 import (
+	"aoc2021/util"
 	"strconv"
 )
 
 func countIncreases(input []string) (count int) {
 	nums, e := parseInputToInts(input)
-	if e != nil {
-		panic(e)
-	}
+	util.Check(e)
+
 	lastNum := nums[0]
 
 	for _, line := range nums {
@@ -23,9 +23,7 @@ func countIncreases(input []string) (count int) {
 
 func countIncreasesPartTwo(input []string) (count int) {
 	nums, e := parseInputToInts(input)
-	if e != nil {
-		panic(e)
-	}
+	util.Check(e)
 
 	lastWindowSum := nums[0] + nums[1] + nums[2]
 
@@ -53,9 +51,7 @@ func parseInputToInts(input []string) (nums []int, e error) {
 		}
 
 		n, e := strconv.Atoi(l)
-		if e != nil {
-			return nil, e
-		}
+		util.Check(e)
 
 		nums = append(nums, n)
 	}
