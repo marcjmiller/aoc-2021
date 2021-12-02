@@ -1,11 +1,10 @@
-package day1
+package day01
 
 import (
 	"strconv"
-	"strings"
 )
 
-func countIncreases(input string) (count int) {
+func countIncreases(input []string) (count int) {
 	nums, e := parseInputToInts(input)
 	if e != nil {
 		panic(e)
@@ -22,7 +21,7 @@ func countIncreases(input string) (count int) {
 	return
 }
 
-func countIncreasesPartTwo(input string) (count int) {
+func countIncreasesPartTwo(input []string) (count int) {
 	nums, e := parseInputToInts(input)
 	if e != nil {
 		panic(e)
@@ -45,18 +44,19 @@ func countIncreasesPartTwo(input string) (count int) {
 	return
 }
 
-func parseInputToInts(input string) (nums []int, e error) {
-	values := strings.Split(input, "\n")
-	nums = make([]int, 0, len(values))
+func parseInputToInts(input []string) (nums []int, e error) {
+	nums = make([]int, 0, len(input))
 
-	for _, l := range values {
+	for _, l := range input {
 		if len(l) == 0 {
 			continue
 		}
+
 		n, e := strconv.Atoi(l)
 		if e != nil {
 			return nil, e
 		}
+
 		nums = append(nums, n)
 	}
 	return
