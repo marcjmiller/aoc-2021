@@ -2,12 +2,10 @@ package day01
 
 import (
 	"aoc-2021/util"
-	"strconv"
 )
 
 func countIncreases(input []string) (count int) {
-	nums, e := parseInputToInts(input)
-	util.Check(e)
+	nums := util.ConvertStrSliceToIntSlice(input)
 
 	lastNum := nums[0]
 
@@ -22,12 +20,11 @@ func countIncreases(input []string) (count int) {
 }
 
 func countIncreasesPartTwo(input []string) (count int) {
-	nums, e := parseInputToInts(input)
-	util.Check(e)
+	nums := util.ConvertStrSliceToIntSlice(input)
 
 	lastWindowSum := nums[0] + nums[1] + nums[2]
 
-	for i, _ := range nums {
+	for i := range nums {
 		if i == 0 || i == len(nums)-1 {
 			continue
 		}
@@ -39,22 +36,6 @@ func countIncreasesPartTwo(input []string) (count int) {
 		lastWindowSum = thisWindowSum
 	}
 
-	return
-}
-
-func parseInputToInts(input []string) (nums []int, e error) {
-	nums = make([]int, 0, len(input))
-
-	for _, l := range input {
-		if len(l) == 0 {
-			continue
-		}
-
-		n, e := strconv.Atoi(l)
-		util.Check(e)
-
-		nums = append(nums, n)
-	}
 	return
 }
 

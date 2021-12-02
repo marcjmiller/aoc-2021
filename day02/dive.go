@@ -57,4 +57,3 @@ func calculatePositionPartTwo(course []string) int {
 
 	return position.depth * position.horizontal
 }
-

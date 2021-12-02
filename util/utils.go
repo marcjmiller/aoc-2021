@@ -24,6 +24,21 @@ func Check(e error) {
 	}
 }
 
+func ConvertStrSliceToIntSlice(input []string) (nums []int) {
+	nums = make([]int, 0, len(input))
+
+	for _, l := range input {
+		if len(l) == 0 {
+			continue
+		}
+
+		n := ConvertStrToInt(l)
+
+		nums = append(nums, n)
+	}
+
+	return
+}
 
 func ConvertStrToInt(in string) (out int) {
 	out, e := strconv.Atoi(in)
