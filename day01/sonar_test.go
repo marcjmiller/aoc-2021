@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	util "aoc2021/util"
+	"aoc-2021/util"
 )
 
 var testInput = []string{"199",

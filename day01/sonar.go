@@ -1,7 +1,7 @@
 package day01
 
 import (
-	"aoc2021/util"
+	"aoc-2021/util"
 	"strconv"
 )
 
