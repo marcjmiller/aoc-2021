@@ -30,7 +30,7 @@ func runDiagnosticsPartOne(input []string) int {
 func runDiagnosticsPartTwo(input []string) int {
 	oRating := findORating(input)
 	co2Rating := findCO2Rating(input)
-	
+
 	return int(oRating * co2Rating)
 }
 
