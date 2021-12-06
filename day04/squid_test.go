@@ -35,7 +35,7 @@ func Test__RunDiagnostics_PartOne(t *testing.T) {
 	if expected != actual {
 		t.Errorf("Expected %d does not match actual, %d", expected, actual)
 	} else {
-		fmt.Printf("\nDay 3 Part 1 result: %d \n\n", bingoPartOne(util.ReadInput(4)))
+		fmt.Printf("\nDay 4 Part 1 result: %d \n\n", bingoPartOne(util.ReadInput(4)))
 	}
 }
 
@@ -46,6 +46,6 @@ func Test__RunDiagnostics_PartTwo(t *testing.T) {
 	if expected != actual {
 		t.Errorf("Expected %d does not match actual, %d", expected, actual)
 	} else {
-		fmt.Printf("\nDay 3 Part 1 result: %d \n\n", bingoPartTwo(util.ReadInput(4)))
+		fmt.Printf("\nDay 4 Part 1 result: %d \n\n", bingoPartTwo(util.ReadInput(4)))
 	}
 }
